@@ -52,7 +52,7 @@ export const IOSA_FINDING_INNER_TYPE = "com.etzhayyim.apps.airSms.iosaFinding";
 export const SECURITY_ALERT_INNER_TYPE = "com.etzhayyim.apps.airSms.securityAlert";
 export const REGULATORY_REPORT_INNER_TYPE = "com.etzhayyim.apps.airSms.regulatoryReport";
 
-export const AIR_SMS_DID_PREFIX = "did:web:air-sms.etzhayyim.com:" as const;
+export const AIR_SMS_DID_PREFIX = "did:web:air-sms.itonami.app:" as const;
 
 // ─── Operational event (PLAINTEXT, public ops timeline) ──────────────
 

@@ -22,12 +22,12 @@
   ],
   "routes": [
     {
-      "pattern": "a1rsms01.etzhayyim.com/*",
-      "zone_name": "etzhayyim.com"
+      "pattern": "a1rsms01.itonami.app/*",
+      "zone_name": "itonami.app"
     },
     {
-      "pattern": "air-sms.etzhayyim.com/*",
-      "zone_name": "etzhayyim.com"
+      "pattern": "air-sms.itonami.app/*",
+      "zone_name": "itonami.app"
     }
   ]
 }
