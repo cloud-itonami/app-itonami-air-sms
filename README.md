@@ -113,7 +113,7 @@ etzhayyim/com-etzhayyim-sdk-mock  c857ff9b…  gh api → 404   git fetch → ty
 **API の方が間違っている。** SHA の存在が判断を左右するときは git に訊くこと
 （この罠はこのファミリーで複数回観測されている）。
 
-## いま在るもの — 28 ファイル
+## いま在るもの — 29 ファイル
 
 | 面 | ファイル |
 |---|---|
@@ -125,7 +125,7 @@ etzhayyim/com-etzhayyim-sdk-mock  c857ff9b…  gh api → 404   git fetch → ty
 | Worker 設定 | `wrangler.jsonc` |
 | ドメインライブラリ（対象外） | `kotoba/`（7 ファイル、うち `.ts` 5 本） |
 | actor 記述子 | `kotodama.jsonld` |
-| 由来・権利・識別 | `NOTICE` / `README.edn` / `migration.edn` / `MIGRATION-TODO.md` |
+| 由来・権利・識別 | `NOTICE` / `README.edn` / `migration.edn` / `MIGRATION-TODO.md` / `blueprint.edn` |
 | 文書 | `README.md` / `docs/operator-quickstart.md` / `docs/adr/0001-*.edn` |
 
 **appview の TypeScript は 0 本、正本言語（`.kotoba`）が 4 本**（+ `scripts/` に 3 本）。
