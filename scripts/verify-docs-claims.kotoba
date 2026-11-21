@@ -29,7 +29,7 @@
 ;; kotoba/src/types.ts, kotoba/test/air-sms.test.ts, kotodama.jsonld diverged from upstream ON PURPOSE; the hashes and byte totals pinned below are the
 ;; new content.
 (def claims
-  {:tracked-files 28
+  {:tracked-files 29
    :inherited-bytes 54525          ; the 12 inherited files still carried unchanged
    :svelte-artifacts 0             ; no .svelte / svelte.config / svelte-dir file survives
    :sveltekit-compat-flags 0       ; nodejs_compat / nodejs_als were adapter-cloudflare's
