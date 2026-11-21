@@ -21,7 +21,7 @@ import {
   coverage,
 } from "../src/index.js";
 
-const OWNER = "did:web:air-sms.etzhayyim.com";
+const OWNER = "did:web:air-sms.itonami.app";
 
 describe("air-sms kotoba (kotoba-E2E split)", () => {
   let e: any;

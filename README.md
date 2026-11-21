@@ -206,12 +206,12 @@ smoke はこれを**2 つの独立した印**で見る: 別の var に置いた 
 `shadow-cljs.edn` のコメント自身がこの文字列を含むので、grep ならキーが
 間違った map に在っても通ってしまう。
 
-## 呼び先が 1 つも解決しない（移行では直らない）
+## 呼び先に 1 つも到達できない（移行では直らない）
 
 | ホスト | 役割 | DNS（2026-08-18、`dig @1.1.1.1`） |
 |---|---|---|
-| `air-sms.etzhayyim.com` | 公開ホスト（wrangler の route） | **NXDOMAIN** |
-| `a1rsms01.etzhayyim.com` | 同（nanoid 側） | **NXDOMAIN** |
+| `air-sms.itonami.app` | 公開ホスト（wrangler の route） | 解決する。応答は **522**（2026-11-21 実測） |
+| `a1rsms01.itonami.app` | 同（nanoid 側） | 解決する。応答は **522**（2026-11-21 実測） |
 | `mcp.etzhayyim.com` | `/xrpc/:nsid` の中継先 | **NXDOMAIN** |
 | `dispatcher.etzhayyim.com` | 持ち越さなかった経路の宛先 | **NXDOMAIN** |
 | `etzhayyim.com` | zone 自体 | 104.21.51.111（生きている） |
@@ -283,3 +283,14 @@ npx --yes kbb --backend sci scripts/verify-docs-claims.cljk .     # <dir> は先
 
 exit 0 = 全一致 / 1 = 食い違い / **2 = 判定できなかった**（0 と区別する）。
 テストとビルドと smoke は `docs/operator-quickstart.md`。
+
+## upstream からの分岐（2026-11-21、JUN-1410）
+
+ドメインを `itonami.app` に統一する決定に合わせて、wrangler の route と `did:web` の識別子を
+`etzhayyim.com` から `itonami.app` へ移した。この app は未 deploy で、旧い識別子が解決したことは一度も無い。
+新しいホスト名（`a1rsms01.itonami.app`、`air-sms.itonami.app`）は `itonami.app` のワイルドカードで名前が引けるが、
+Worker が bind されていないので応答は 522 になる（2026-11-21 実測）。
+
+upstream の byte と一致しなくなったファイル: `kotoba/src/types.ts`、`kotoba/test/air-sms.test.ts`、`kotodama.jsonld`。
+検証器（`scripts/`）の sha256 と byte 数は新しい内容に合わせてある。
+変えていないもの: ほかのサービスのホスト名、lexicon の名前空間、`docs/adr/`（当時の記録）。

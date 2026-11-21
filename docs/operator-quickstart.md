@@ -44,7 +44,7 @@ npx --yes kbb --backend sci scripts/verify-docs-claims.cljk .
 ```
 SCANNED	25
 PASS	tracked-files	expected=25	actual=25
-PASS	inherited-bytes	expected=54531	actual=54531
+PASS	inherited-bytes	expected=54525	actual=54525
 PASS	preserved-files-unchanged	expected=[]	actual=[]
 PASS	removed-by-migration-absent	expected=[]	actual=[]
 PASS	svelte-artifacts	expected=0	actual=0
@@ -336,12 +336,12 @@ cd "$REPO"
 npx wrangler deploy
 ```
 
-**ただし route が指すホストは解決しない。** 実測 2026-08-18（`dig @1.1.1.1`）:
+**ただし route が指すホストは応答しない。** 実測（`dig @1.1.1.1`。route の 2 行は 2026-11-21、ほかは 2026-08-18）:
 
 | ホスト | 結果 |
 |---|---|
-| `air-sms.etzhayyim.com` | NXDOMAIN |
-| `a1rsms01.etzhayyim.com` | NXDOMAIN |
+| `air-sms.itonami.app` | 解決する。応答は **522**（2026-11-21 実測） |
+| `a1rsms01.itonami.app` | 解決する。応答は **522**（2026-11-21 実測） |
 | `mcp.etzhayyim.com` | NXDOMAIN |
 | `dispatcher.etzhayyim.com` | NXDOMAIN |
 | `etzhayyim.com`（zone 自体） | 104.21.51.111 |
